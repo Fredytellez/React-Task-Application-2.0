@@ -7,7 +7,7 @@ export const tasks = [
   {
     id: 1,
     title: "mi segunda tarea",
-    description: "mi tercera tarea",
+    description: "mi segunda tarea",
   },
   {
     id: 2,
