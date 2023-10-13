@@ -2,15 +2,14 @@ import { useState } from "react";
 
 function TaskForm({ createTask }) {
   const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const newTask = {
+    createTask({
       title,
-      id: 4,
-      description: "Nueva tarea",
-    };
-    createTask(newTask);
+      description,
+    });
   };
 
   return (
@@ -21,6 +20,10 @@ function TaskForm({ createTask }) {
           setTitle(e.target.value);
         }}
       />
+      <textarea
+        placeholder="Escribe una descripción"
+        onChange={(e) => setDescription(e.target.value)}
+      ></textarea>
       <button>Guardar</button>
     </form>
   );
